@@ -1,0 +1,24 @@
+.skill {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: .2rem;
+    margin-top: .8rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 768px) {
+    .skill {
+        font-size: 1.2rem;
+        margin-top: 0.7rem;
+        margin-bottom: 0.15rem;
+    }
+}
+
+/* For devices with a width of 480px or less (mobile phones) */
+@media (max-width: 480px) {
+    .skill {
+        font-size: .9rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.1rem;
+    }
+}

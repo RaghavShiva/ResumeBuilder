@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+}
+
+/* Define variables for light theme */
+body.light-theme {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --container-bg-color: aqua;
+    --body-bg-color: #c7c5c5;
+}
+
+/* Define variables for dark theme */
+body.dark-theme {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --container-bg-color: #004d40;
+    --body-bg-color: #433f3f;
+}
+
+/* Apply global variables */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.body {
+    position: relative;
+    /* Establishes a positioned ancestor for absolute positioning */
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    padding: 1rem;
+    margin-top: 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--body-bg-color);
+}
+
+/* Buttons positioned relative to .body */
+.theme {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #6d6868;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    /* Center the content */
+    align-items: center;
+    /* Vertical centering */
+    justify-content: center;
+}
+
+.theme button {
+    border-radius: 50%;
+    border: none;
+    font-size: large;
+    background-color: #6d6868;
+    cursor: pointer;
+}
+
+.theme:hover {
+    background-color: #615e5e;
+    /* Highlight effect */
+    color: #000000;
+}
+
+.print {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border-radius: 20%;
+    border: none;
+    background-color: #6d6868;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    /* Center the content */
+    align-items: center;
+    /* Vertical centering */
+    justify-content: center;
+}
+
+.print button {
+    border-radius: 20%;
+    border: none;
+    font-size: larger;
+    background-color: #6d6868;
+    cursor: pointer;
+}
+
+.print:hover {
+    background-color: #615e5e;
+    /* Highlight effect */
+    color: #000000;
+}
+
+/* Use the variable for the container background */
+.container {
+    background-color: var(--container-bg-color);
+    width: 100%;
+    padding: 1rem;
+    margin-top: 45px;
+    /* Add space between the buttons and the content */
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .body {
+        width: 70%;
+    }
+
+    .theme {
+        right: 80px;
+
+        /* Adjust button positions for smaller screens */
+    }
+
+    .print {
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .body {
+        width: 90%;
+    }
+
+    .theme {
+        right: 70px;
+
+    }
+
+    .print {
+        right: 10px;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+        /* Hide everything on the page */
+    }
+
+    .container,
+    .container * {
+        visibility: visible;
+        /* Show only the container */
+    }
+
+    .container {
+        position: absolute;
+        /* Optional: to ensure the content is centered or styled correctly during print */
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* Ensure it takes up the full width */
+    }
+}

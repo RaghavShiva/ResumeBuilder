@@ -1,0 +1,36 @@
+.proj {
+    display: block;
+    font-size: 1.3rem;
+    margin-top: .8rem;
+    margin-bottom: .2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+li {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .proj {
+        font-size: 1.2rem;
+        margin-top: 0.7rem;
+        margin-bottom: 0.15rem;
+    }
+
+    li {
+        font-size: .9rem;
+    }
+}
+
+/* For devices with a width of 480px or less (mobile phones) */
+@media (max-width: 480px) {
+    .proj {
+        font-size: .9rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.1rem;
+    }
+
+    li {
+        font-size: .8rem;
+    }
+}

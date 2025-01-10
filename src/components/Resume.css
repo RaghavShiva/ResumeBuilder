@@ -1,0 +1,21 @@
+.name {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .name {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+}
