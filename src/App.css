@@ -2,7 +2,6 @@
     margin: 0;
 }
 
-/* Define variables for light theme */
 body.light-theme {
     --background-color: #ffffff;
     --text-color: #000000;
@@ -10,7 +9,6 @@ body.light-theme {
     --body-bg-color: #c7c5c5;
 }
 
-/* Define variables for dark theme */
 body.dark-theme {
     --background-color: #121212;
     --text-color: #ffffff;
@@ -18,7 +16,6 @@ body.dark-theme {
     --body-bg-color: #433f3f;
 }
 
-/* Apply global variables */
 body {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -26,7 +23,6 @@ body {
 
 .body {
     position: relative;
-    /* Establishes a positioned ancestor for absolute positioning */
     display: block;
     width: 40%;
     margin: 0 auto;
@@ -37,7 +33,6 @@ body {
     background-color: var(--body-bg-color);
 }
 
-/* Buttons positioned relative to .body */
 .theme {
     height: 40px;
     width: 40px;
@@ -51,10 +46,37 @@ body {
     background-color: #6d6868;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
-    /* Center the content */
     align-items: center;
-    /* Vertical centering */
     justify-content: center;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-20%);
+    transform: translateY(100%);
+    white-space: nowrap;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
 }
 
 .theme button {
@@ -67,8 +89,12 @@ body {
 
 .theme:hover {
     background-color: #615e5e;
-    /* Highlight effect */
     color: #000000;
+}
+
+.theme:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
 
 .print {
@@ -84,9 +110,7 @@ body {
     background-color: #6d6868;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
-    /* Center the content */
     align-items: center;
-    /* Vertical centering */
     justify-content: center;
 }
 
@@ -100,20 +124,21 @@ body {
 
 .print:hover {
     background-color: #615e5e;
-    /* Highlight effect */
     color: #000000;
 }
 
-/* Use the variable for the container background */
+.print:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
 .container {
     background-color: var(--container-bg-color);
     width: 100%;
     padding: 1rem;
     margin-top: 45px;
-    /* Add space between the buttons and the content */
 }
 
-/* Media queries */
 @media (max-width: 768px) {
     .body {
         width: 70%;
@@ -121,8 +146,6 @@ body {
 
     .theme {
         right: 80px;
-
-        /* Adjust button positions for smaller screens */
     }
 
     .print {
@@ -148,21 +171,17 @@ body {
 @media print {
     body * {
         visibility: hidden;
-        /* Hide everything on the page */
     }
 
     .container,
     .container * {
         visibility: visible;
-        /* Show only the container */
     }
 
     .container {
         position: absolute;
-        /* Optional: to ensure the content is centered or styled correctly during print */
         top: 0;
         left: 0;
         width: 100%;
-        /* Ensure it takes up the full width */
     }
 }

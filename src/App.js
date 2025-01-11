@@ -35,11 +35,13 @@ function App() {
           <button onClick={toggletheme}>
             {!isDarkMode ? <FaMoon /> : <FaRegMoon />}
           </button>
+          <span className='tooltip-text'>Toggle Theme</span>
         </div>
         <div className='print'>
           <button onClick={handlePrint}>
             <FaPrint />
           </button>
+          <span className='tooltip-text'>Print</span>
         </div>
         <div className='container'>
           <div>
