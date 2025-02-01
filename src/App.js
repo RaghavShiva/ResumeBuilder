@@ -7,7 +7,9 @@ import Extracur from './components/Extracur';
 import Projects from './components/Projects';
 import Resume from './components/Resume'
 import Skills from './components/Skills';
-import { FaRegMoon, FaMoon, FaPrint } from 'react-icons/fa'
+
+import { FaRegMoon, FaMoon, FaPrint} from 'react-icons/fa'
+import ResumeEditor from './components/ResumeEditor';
 function App() {
   const data = {
     name: "Shiva",
@@ -26,8 +28,9 @@ function App() {
   }
 
   const handlePrint = () => {
-    window.print(); // Trigger the print dialog
+    window.print();
   };
+
   return (
     <>
       <div className='body'>
@@ -43,6 +46,7 @@ function App() {
           </button>
           <span className='tooltip-text'>Print</span>
         </div>
+        <ResumeEditor data={data} />
         <div className='container'>
           <div>
             <Resume data={data} />
@@ -52,6 +56,7 @@ function App() {
             <Skills data={data} />
             <Achievements data={data} />
             <Extracur data={data} />
+            <ResumeEditor data={data} />
           </div>
         </div>
       </div>
